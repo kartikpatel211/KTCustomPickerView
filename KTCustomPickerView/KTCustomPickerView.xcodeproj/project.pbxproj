@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BE5B5DA23BCB6370013442D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5B5D923BCB6370013442D /* AppDelegate.swift */; };
+		3BE5B5DC23BCB6370013442D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5B5DB23BCB6370013442D /* ViewController.swift */; };
+		3BE5B5DF23BCB6370013442D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5B5DD23BCB6370013442D /* Main.storyboard */; };
+		3BE5B5E123BCB6710013442D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5B5E023BCB6710013442D /* Assets.xcassets */; };
+		3BE5B5E423BCB6710013442D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE5B5E223BCB6710013442D /* LaunchScreen.storyboard */; };
+		3BE5B5ED23BCB69E0013442D /* KTCustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE5B5EC23BCB69E0013442D /* KTCustomPickerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3BE5B5D623BCB6360013442D /* KTCustomPickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTCustomPickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BE5B5D923BCB6370013442D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3BE5B5DB23BCB6370013442D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3BE5B5DE23BCB6370013442D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3BE5B5E023BCB6710013442D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BE5B5E323BCB6710013442D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3BE5B5E523BCB6710013442D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BE5B5EC23BCB69E0013442D /* KTCustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTCustomPickerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BE5B5D323BCB6360013442D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BE5B5CD23BCB6360013442D = {
+			isa = PBXGroup;
+			children = (
+				3BE5B5EB23BCB6890013442D /* KTCustomPickerView */,
+				3BE5B5D823BCB6360013442D /* KTCustomPickerViewExample */,
+				3BE5B5D723BCB6360013442D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BE5B5D723BCB6360013442D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5B5D623BCB6360013442D /* KTCustomPickerView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BE5B5D823BCB6360013442D /* KTCustomPickerViewExample */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5B5D923BCB6370013442D /* AppDelegate.swift */,
+				3BE5B5DB23BCB6370013442D /* ViewController.swift */,
+				3BE5B5DD23BCB6370013442D /* Main.storyboard */,
+				3BE5B5E023BCB6710013442D /* Assets.xcassets */,
+				3BE5B5E223BCB6710013442D /* LaunchScreen.storyboard */,
+				3BE5B5E523BCB6710013442D /* Info.plist */,
+			);
+			path = KTCustomPickerViewExample;
+			sourceTree = "<group>";
+		};
+		3BE5B5EB23BCB6890013442D /* KTCustomPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				3BE5B5EC23BCB69E0013442D /* KTCustomPickerView.swift */,
+			);
+			path = KTCustomPickerView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BE5B5D523BCB6360013442D /* KTCustomPickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BE5B5E823BCB6710013442D /* Build configuration list for PBXNativeTarget "KTCustomPickerView" */;
+			buildPhases = (
+				3BE5B5D223BCB6360013442D /* Sources */,
+				3BE5B5D323BCB6360013442D /* Frameworks */,
+				3BE5B5D423BCB6360013442D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KTCustomPickerView;
+			productName = KTCustomPickerView;
+			productReference = 3BE5B5D623BCB6360013442D /* KTCustomPickerView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BE5B5CE23BCB6360013442D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = KTPatel;
+				TargetAttributes = {
+					3BE5B5D523BCB6360013442D = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 3BE5B5D123BCB6360013442D /* Build configuration list for PBXProject "KTCustomPickerView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3BE5B5CD23BCB6360013442D;
+			productRefGroup = 3BE5B5D723BCB6360013442D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BE5B5D523BCB6360013442D /* KTCustomPickerView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BE5B5D423BCB6360013442D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE5B5E423BCB6710013442D /* LaunchScreen.storyboard in Resources */,
+				3BE5B5E123BCB6710013442D /* Assets.xcassets in Resources */,
+				3BE5B5DF23BCB6370013442D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BE5B5D223BCB6360013442D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BE5B5ED23BCB69E0013442D /* KTCustomPickerView.swift in Sources */,
+				3BE5B5DC23BCB6370013442D /* ViewController.swift in Sources */,
+				3BE5B5DA23BCB6370013442D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3BE5B5DD23BCB6370013442D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BE5B5DE23BCB6370013442D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3BE5B5E223BCB6710013442D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BE5B5E323BCB6710013442D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BE5B5E623BCB6710013442D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3BE5B5E723BCB6710013442D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BE5B5E923BCB6710013442D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 338NDGXH64;
+				INFOPLIST_FILE = "$(SRCROOT)/KTCustomPickerViewExample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ktp.KTCustomPickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BE5B5EA23BCB6710013442D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 338NDGXH64;
+				INFOPLIST_FILE = "$(SRCROOT)/KTCustomPickerViewExample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ktp.KTCustomPickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BE5B5D123BCB6360013442D /* Build configuration list for PBXProject "KTCustomPickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE5B5E623BCB6710013442D /* Debug */,
+				3BE5B5E723BCB6710013442D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BE5B5E823BCB6710013442D /* Build configuration list for PBXNativeTarget "KTCustomPickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BE5B5E923BCB6710013442D /* Debug */,
+				3BE5B5EA23BCB6710013442D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BE5B5CE23BCB6360013442D /* Project object */;
+}
