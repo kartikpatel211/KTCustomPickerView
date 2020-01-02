@@ -27,14 +27,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func setupPicker() {
-        picker.addTarget(self, action: #selector(openPicker), for: .touchUpInside)
-        picker.setPickerView(delegate: self, datasource: self, placeHolder: "Select option")
+        picker.setPickerView(pickerViewDelegate: self, pickerViewDatasource: self, parentViewController: self, presentationControllerDelegate: self, delegate: self, placeHolder: "Select option")
     }
 
-    @objc func openPicker() {
-        picker.presentPicker(parentViewController: self, presentationControllerDelegate: self, delegate: self)
-    }
-    
     // MARK: UIPickerView delegate
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

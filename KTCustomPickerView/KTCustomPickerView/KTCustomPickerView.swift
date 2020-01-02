@@ -20,11 +20,17 @@ protocol KTCustomPickerViewDelegate {
     func cancelTapped(sender: KTCustomPickerView)
 }
 
+extension KTCustomPickerViewDelegate {
+    func doneTapped(sender: KTCustomPickerView) { }
+    func cancelTapped(sender: KTCustomPickerView) { }
+}
+
 class KTCustomPickerView : UIControl {
     
     private var delegate: KTCustomPickerViewDelegate? = nil
     private var parentViewController : UIViewController!
     private var alertController : UIAlertController!
+    private var presentationControllerDelegate : UIPopoverPresentationControllerDelegate? = nil
     
     private lazy var pickerView = UIPickerView.init()
     private lazy var pickerButton: UIButton = {
@@ -43,18 +49,19 @@ class KTCustomPickerView : UIControl {
         return btn
     }()
     
-    func setPickerView(delegate: UIPickerViewDelegate, datasource: UIPickerViewDataSource, placeHolder: String? = nil) {
+    func setPickerView(pickerViewDelegate: UIPickerViewDelegate, pickerViewDatasource: UIPickerViewDataSource, parentViewController: UIViewController, presentationControllerDelegate : UIPopoverPresentationControllerDelegate, delegate: KTCustomPickerViewDelegate, placeHolder: String? = nil) {
+        
         if let placeHolder = placeHolder {
             self.pickerButton.setTitle(placeHolder, for: .normal)
         }
-        self.pickerView.delegate = delegate
-        self.pickerView.dataSource = datasource
+        self.pickerView.delegate = pickerViewDelegate
+        self.pickerView.dataSource = pickerViewDatasource
+        self.presentationControllerDelegate = presentationControllerDelegate
+        self.delegate = delegate
+        self.parentViewController = parentViewController
+        self.pickerButton.addTarget(self, action: #selector(presentPicker), for: .touchUpInside)
     }
 
-    override func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
-        self.pickerButton.addTarget(target, action: action, for: controlEvents)
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -85,19 +92,15 @@ class KTCustomPickerView : UIControl {
         return self.pickerView.selectedRow(inComponent: 0)
     }
     
-    func presentPicker(parentViewController: UIViewController, presentationControllerDelegate : UIPopoverPresentationControllerDelegate, delegate: KTCustomPickerViewDelegate) {
-        
-        self.delegate = delegate
-        self.parentViewController = parentViewController
-        
+    @objc private func presentPicker() {
         if isPad {
-            presentPickerForIPad(parentViewController: parentViewController, presentationControllerDelegate: presentationControllerDelegate, delegate: delegate)
+            presentPickerForIPad(parentViewController: parentViewController)
         } else {
-            presentPickerForIPhone(parentViewController: parentViewController, presentationControllerDelegate: presentationControllerDelegate, delegate: delegate)
+            presentPickerForIPhone(parentViewController: parentViewController)
         }
     }
     
-    private func presentPickerForIPad(parentViewController: UIViewController, presentationControllerDelegate : UIPopoverPresentationControllerDelegate, delegate: KTCustomPickerViewDelegate) {
+    private func presentPickerForIPad(parentViewController: UIViewController) {
         
         pickerView.frame = CGRect(x: 0, y: 0,width: parentViewController.view.frame.width / 2, height: parentViewController.view.frame.height / 2)
         
@@ -124,7 +127,7 @@ class KTCustomPickerView : UIControl {
         parentViewController.present(nav, animated: true, completion: nil)
     }
     
-    private func presentPickerForIPhone(parentViewController: UIViewController, presentationControllerDelegate : UIPopoverPresentationControllerDelegate, delegate: KTCustomPickerViewDelegate) {
+    private func presentPickerForIPhone(parentViewController: UIViewController) {
         
         pickerView.frame = CGRect(x: 0, y: 45,width: parentViewController.view.frame.size.width-16, height: 170)
         
