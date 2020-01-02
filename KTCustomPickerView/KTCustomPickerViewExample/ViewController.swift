@@ -49,7 +49,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     // Mark: CustomPickerViewDelegate
     func doneTapped(sender: KTCustomPickerView) {
-        picker.setSelectedValue(text: data[sender.getSelectedIndex()])
+        picker.setPickerViewText(text: data[sender.getSelectedIndex()])
     }
     func cancelTapped(sender: KTCustomPickerView) {
         

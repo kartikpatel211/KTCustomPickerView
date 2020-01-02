@@ -84,23 +84,31 @@ class KTCustomPickerView : UIControl {
         self.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
     }
     
-    func setSelectedValue(text: String) {
+    func isContains(pickerView: UIPickerView) -> Bool {
+        return self.pickerView == pickerView
+    }
+    
+    func setPickerViewText(text: String) {
         self.pickerButton.setTitle(text, for: .normal)
     }
-
+    
     func getSelectedIndex() -> Int {
         return self.pickerView.selectedRow(inComponent: 0)
     }
     
+    func getPickerViewText() -> String? {
+        return self.pickerButton.titleLabel?.text
+    }
+    
     @objc private func presentPicker() {
         if isPad {
-            presentPickerForIPad(parentViewController: parentViewController)
+            presentPickerForIPad()
         } else {
-            presentPickerForIPhone(parentViewController: parentViewController)
+            presentPickerForIPhone()
         }
     }
     
-    private func presentPickerForIPad(parentViewController: UIViewController) {
+    private func presentPickerForIPad() {
         
         pickerView.frame = CGRect(x: 0, y: 0,width: parentViewController.view.frame.width / 2, height: parentViewController.view.frame.height / 2)
         
@@ -127,9 +135,9 @@ class KTCustomPickerView : UIControl {
         parentViewController.present(nav, animated: true, completion: nil)
     }
     
-    private func presentPickerForIPhone(parentViewController: UIViewController) {
+    private func presentPickerForIPhone() {
         
-        pickerView.frame = CGRect(x: 0, y: 45,width: parentViewController.view.frame.size.width-16, height: 170)
+        pickerView.frame = CGRect(x: 0, y: 40, width: parentViewController.view.frame.size.width, height: 175)
         
         let title = ""
         let message = "\n\n\n\n\n\n\n\n\n\n"
@@ -138,17 +146,17 @@ class KTCustomPickerView : UIControl {
         alertController.isModalInPopover = true
         alertController.view.addSubview(pickerView)
         
-        let toolFrame = CGRect(x: 17, y: 5, width: parentViewController.view.frame.width, height: 45)
+        let toolFrame = CGRect(x: 0, y: 5, width: parentViewController.view.frame.width, height: 40)
         let toolView: UIView = UIView(frame: toolFrame)
         
-        let buttonCancel: UIButton = UIButton(frame:  CGRect(x: 0, y: 7, width: 60, height: 30))
+        let buttonCancel: UIButton = UIButton(frame:  CGRect(x: 0, y: 5, width: 100, height: 30))
         buttonCancel.setTitle("Cancel", for: .normal)
         buttonCancel.setTitleColor(.blue, for: .normal)
         buttonCancel.titleLabel?.lineBreakMode = .byTruncatingTail
         buttonCancel.addTarget(self, action: #selector(pickCancelForIPhone_Tapped), for: .touchUpInside)
         toolView.addSubview(buttonCancel)
         
-        let buttonDone: UIButton = UIButton(frame: CGRect(x: parentViewController.view.frame.size.width-115,y: 7, width: 60, height: 30));
+        let buttonDone: UIButton = UIButton(frame: CGRect(x: parentViewController.view.frame.size.width - 100, y: 5, width: 100, height: 30));
         buttonDone.setTitle("Done", for: .normal)
         buttonDone.setTitleColor(.orange, for: .normal)
         buttonDone.titleLabel?.lineBreakMode = .byTruncatingTail
@@ -178,5 +186,6 @@ class KTCustomPickerView : UIControl {
         alertController.dismiss(animated: true, completion: nil)
         delegate?.cancelTapped(sender: self)
     }
+    
     
 }
