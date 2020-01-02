@@ -21,15 +21,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
 
     func setupPickerData() {
-        for i in 0...10 {
+        for i in 1...10 {
             data.append("Option \(i)")
         }
     }
     
     func setupPicker() {
-        picker.setTitle(text: "Select option")
         picker.addTarget(self, action: #selector(openPicker), for: .touchUpInside)
-        picker.setPickerView(delegate: self, datasource: self)
+        picker.setPickerView(delegate: self, datasource: self, placeHolder: "Select option")
     }
 
     @objc func openPicker() {
@@ -55,7 +54,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     // Mark: CustomPickerViewDelegate
     func doneTapped(sender: KTCustomPickerView) {
-        picker.showSelectedValue(text: data[sender.selectedRow()])
+        picker.setSelectedValue(text: data[sender.getSelectedIndex()])
     }
     func cancelTapped(sender: KTCustomPickerView) {
         

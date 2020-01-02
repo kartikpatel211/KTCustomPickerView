@@ -22,12 +22,12 @@ protocol KTCustomPickerViewDelegate {
 
 class KTCustomPickerView : UIControl {
     
-    var delegate: KTCustomPickerViewDelegate? = nil
-    var parentViewController : UIViewController!
-    var alertController : UIAlertController!
+    private var delegate: KTCustomPickerViewDelegate? = nil
+    private var parentViewController : UIViewController!
+    private var alertController : UIAlertController!
     
-    lazy var pickerView = UIPickerView.init()
-    lazy var pickerButton: UIButton = {
+    private lazy var pickerView = UIPickerView.init()
+    private lazy var pickerButton: UIButton = {
         let btn = UIButton.init(type: .system)
         btn.setImage(UIImage(named: "down-arrow"), for: .normal)
         btn.tintColor = .darkGray
@@ -43,19 +43,18 @@ class KTCustomPickerView : UIControl {
         return btn
     }()
     
-    func setPickerView(delegate: UIPickerViewDelegate, datasource: UIPickerViewDataSource) {
+    func setPickerView(delegate: UIPickerViewDelegate, datasource: UIPickerViewDataSource, placeHolder: String? = nil) {
+        if let placeHolder = placeHolder {
+            self.pickerButton.setTitle(placeHolder, for: .normal)
+        }
         self.pickerView.delegate = delegate
         self.pickerView.dataSource = datasource
     }
-    
-    func setTitle(text: String) {
-        self.pickerButton.setTitle(text, for: .normal)
-    }
-    
+
     override func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
         self.pickerButton.addTarget(target, action: action, for: controlEvents)
     }
-   
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -67,9 +66,9 @@ class KTCustomPickerView : UIControl {
         }
     }
     
-    func setupView() {
+    private func setupView() {
         self.addSubview(pickerButton)
-       
+        
         pickerButton.translatesAutoresizingMaskIntoConstraints = false
         let horizontalConstraint = NSLayoutConstraint(item: pickerButton, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
         let verticalConstraint = NSLayoutConstraint(item: pickerButton, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1, constant: 0)
@@ -78,11 +77,11 @@ class KTCustomPickerView : UIControl {
         self.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
     }
     
-    func showSelectedValue(text: String) {
+    func setSelectedValue(text: String) {
         self.pickerButton.setTitle(text, for: .normal)
     }
-    
-    func selectedRow() -> Int {
+
+    func getSelectedIndex() -> Int {
         return self.pickerView.selectedRow(inComponent: 0)
     }
     
@@ -157,24 +156,24 @@ class KTCustomPickerView : UIControl {
         parentViewController.present(alertController, animated: true, completion: nil)
     }
     
-    @objc func pickDoneForIPad_Tapped() {
+    @objc private func pickDoneForIPad_Tapped() {
         parentViewController.dismiss(animated: true, completion: nil)
         delegate?.doneTapped(sender: self)
     }
     
-    @objc func pickCancelForIPad_Tapped() {
+    @objc private func pickCancelForIPad_Tapped() {
         parentViewController.dismiss(animated: true, completion: nil)
         delegate?.cancelTapped(sender: self)
     }
     
-    @objc func pickDoneForIPhone_Tapped() {
+    @objc private func pickDoneForIPhone_Tapped() {
         alertController.dismiss(animated: true, completion: nil)
         delegate?.doneTapped(sender: self)
     }
     
-    @objc func pickCancelForIPhone_Tapped() {
+    @objc private func pickCancelForIPhone_Tapped() {
         alertController.dismiss(animated: true, completion: nil)
         delegate?.cancelTapped(sender: self)
     }
-   
+    
 }
